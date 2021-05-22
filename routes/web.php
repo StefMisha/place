@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::resource('event', EventController::class);
+
+Route::group(['prefix' => 'edit', 'as' => 'edit.'], function () {
+    Route::delete('/unsubscribe', [UserController::class, 'unsubscribe'])
+        ->name('unsubscribe');
+    Route::get('/join', [UserController::class, 'join'])
+        ->name('join');
 });
 
 Auth::routes();
