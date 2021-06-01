@@ -29,7 +29,7 @@ class EventSeeder extends Seeder
 
             $data[] = [
                 'name' => $faker->emoji(),
-                'description' => $faker->realText(mt_rand(150, 250)),
+                'description' => $faker->realText(mt_rand(100, 150)),
                 'date' => $dateFormate
             ];
         }

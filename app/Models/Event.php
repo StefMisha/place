@@ -16,7 +16,7 @@ class Event extends Model
 
     public $timestamps = false;
     protected $fillable = [
-        'name', 'description', 'data'
+        'name', 'description', 'date'
     ];
 
 
