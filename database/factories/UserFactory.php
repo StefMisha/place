@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Faker;
 
 class UserFactory extends Factory
 {
@@ -25,7 +26,7 @@ class UserFactory extends Factory
         return [
             'name'  => $this->faker->firstName,
             'surname' => $this->faker->lastName,
-            'age' => $this->faker->numberBetween(mt_rand(100, 200)),
+            'age' => $this->faker->numberBetween(mt_rand(14, 80)),
             'place_of_birth' => $this->faker->address('streetAddress'),
             'email' => $this->faker->email(),
             'password' => $this->faker->password(),
